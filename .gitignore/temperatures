@@ -1,0 +1,35 @@
+
+
+var n = parseInt(readline()); // the number of temperatures to analyse
+var inputs = readline().split(' ');
+var res = new Array(n);
+
+
+//printErr(res); 
+for (var i = 0; i < n; i++) {
+    var t = parseInt(inputs[i]); // a temperature expressed as an integer ranging from -273 to 5526
+    res[i] = t;
+}
+
+    r = res[0]; //valeur à comparer
+    printErr('res : ' , res); 
+    var i = 0;
+    if(n!==0){
+        while(i < n){
+            if (Math.abs(r) > Math.abs(res[i+1])){      //test si la valeur ABSOLUE est plus grande que la case suivante
+                r = res[i+1];
+            }
+            if (Math.abs(r) == Math.abs(res[i+1])){     //test si la valeur ABSOLUE est égale à la case suivante
+                if(r<res[i+1]){                         //test si la valeur est suéprieur à celle de la case suivante
+                    r = res[i+1];
+                    
+                }
+            }
+            //printErr('res :',res[i+1]); 
+            i++;
+            
+        }
+    }
+    else r = 0;
+
+print(r);
